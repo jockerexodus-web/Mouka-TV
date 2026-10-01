@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouka Streaming — Zylva Labs</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">M</div>
+        <div>
+          <div class="logo-text gradient-text">MOUKA</div>
+          <div class="logo-sub">STREAMING</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <button class="nav-link active" data-filter="all">Accueil</button>
+        <button class="nav-link" data-filter="anime">Animés</button>
+        <button class="nav-link" data-filter="serie">Séries</button>
+        <button class="nav-link" data-filter="film">Films</button>
+      </div>
+
+      <div class="search-box">
+        <input id="search" type="text" placeholder="🔍 Rechercher...">
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero"></section>
+
+  <!-- CATALOGUE -->
+  <main class="container">
+    <div class="section-title">
+      <h2 id="section-title">Tendances</h2>
+      <div class="line"></div>
+    </div>
+    <div id="liste" class="grid"></div>
+    <p id="empty" class="empty" style="display:none">Aucun résultat 😢</p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <div class="logo-icon small">M</div>
+      <span class="gradient-text">MOUKA STREAMING</span>
+    </div>
+    <p>© 2025 — Créé par <span class="highlight">Zylva Labs</span></p>
+  </footer>
+
+  <script>
+    let allVideos = [];
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    // Charge le catalogue
+    fetch('api.json')
+      .then(r => r.json())
+      .then(data => {
+        allVideos = data.videos;
+        renderHero(allVideos[0]);
+        render();
+      })
+      .catch(err => console.error('Erreur chargement api.json', err));
+
+    // Affiche le hero (vidéo à la une)
+    function renderHero(video) {
+      if (!video) return;
+      document.getElementById('hero').style.backgroundImage = `url(${video.cover})`;
+      document.getElementById('hero').innerHTML = `
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-badge">⭐ À la une</div>
+          <h1>${video.titre}</h1>
+          <div class="hero-meta">
+            <span class="badge">${video.type.toUpperCase()}</span>
+            ${video.saison ? `<span>${video.saison === 1 ? '' : 'S' + video.saison}</span>` : ''}
+            ${video.episode ? `<span>Épisode ${video.episode}</span>` : ''}
+          </div>
+          <p>${video.description}</p>
+          <a href="watch.html?id=${video.id}" class="btn-primary">▶ Lecture</a>
+        </div>
+      `;
+    }
+
+    // Filtre + recherche
+    function render() {
+      const filtered = allVideos.filter(v => {
+        const matchType = currentFilter === 'all' || v.type === currentFilter;
+        const matchSearch = v.titre.toLowerCase().includes(currentSearch.toLowerCase());
+        return matchType && matchSearch;
+      });
+
+      const list = document.getElementById('liste');
+      const empty = document.getElementById('empty');
+
+      if (filtered.length === 0) {
+        list.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+
+      list.innerHTML = filtered.map(v => `
+        <a href="watch.html?id=${v.id}" class="card">
+          <div class="card-cover">
+            <img src="${v.cover}" alt="${v.titre}" loading="lazy">
+            <div class="card-overlay">
+              <div class="play-btn">▶</div>
+            </div>
+            <span class="card-type">${v.type}</span>
+          </div>
+          <div class="card-info">
+            <h3>${v.titre}</h3>
+            <p>
+              ${v.saison ? `S${v.saison}` : ''}
+              ${v.episode ? `· Ép. ${v.episode}` : ''}
+              ${!v.saison && !v.episode ? 'Film' : ''}
+            </p>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    // Filtres navbar
+    document.querySelectorAll('.nav-link').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        const labels = { all: 'Tendances', anime: 'Animés', serie: 'Séries', film: 'Films' };
+        document.getElementById('section-title').textContent = labels[currentFilter];
+        render();
+      });
+    });
+
+    // Recherche
+    document.getElementById('search').addEventListener('input', e => {
+      currentSearch = e.target.value;
+      render();
+    });
+  </script>
+</body>
+</html>
