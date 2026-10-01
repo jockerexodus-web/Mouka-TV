@@ -1,0 +1,116 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "titre": "One Piece 1070",
+      "type": "anime",
+      "saison": 1,
+      "episode": 1070,
+      "cover": "https://image.tmdb.org/t/p/w500/fcPUJgsWQ5i37k3mL7mzNoZQLQF.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "description": "Luffy vs Kaido — Le combat final commence sur Onigashima !"
+    },
+    {
+      "id": 2,
+      "titre": "Avatar 2 : La Voie de l'eau",
+      "type": "film",
+      "cover": "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "description": "Jake Sully et sa famille explorent les océans de Pandora et affrontent une nouvelle menace."
+    },
+    {
+      "id": 3,
+      "titre": "Demon Slayer Saison 4",
+      "type": "anime",
+      "saison": 4,
+      "episode": 1,
+      "cover": "https://image.tmdb.org/t/p/w500/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "description": "Tanjiro et ses compagnons affrontent les démons du village des forgerons."
+    },
+    {
+      "id": 4,
+      "titre": "Stranger Things",
+      "type": "serie",
+      "saison": 4,
+      "episode": 1,
+      "cover": "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "description": "Hawkins plonge dans le Upside Down alors qu'une nouvelle menace surgit."
+    },
+    {
+      "id": 5,
+      "titre": "Jujutsu Kaisen Saison 2",
+      "type": "anime",
+      "saison": 2,
+      "episode": 1,
+      "cover": "https://image.tmdb.org/t/p/w500/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "description": "L'arc de Shibuya commence — Gojo face aux fléaux."
+    },
+    {
+      "id": 6,
+      "titre": "Dune : Part Two",
+      "type": "film",
+      "cover": "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "description": "Paul Atréides s'unit aux Fremen pour venger sa famille et libérer Arrakis."
+    },
+    {
+      "id": 7,
+      "titre": "Attack on Titan — Final",
+      "type": "anime",
+      "saison": 4,
+      "episode": 28,
+      "cover": "https://image.tmdb.org/t/p/w500/hgKJcB6zVCrKvSxr5uxYQrFmPjP.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "description": "Le dénouement épique de l'humanité face aux Titans."
+    },
+    {
+      "id": 8,
+      "titre": "Breaking Bad",
+      "type": "serie",
+      "saison": 5,
+      "episode": 16,
+      "cover": "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "description": "Le final bouleversant de Walter White — Felina."
+    },
+    {
+      "id": 9,
+      "titre": "The Batman",
+      "type": "film",
+      "cover": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+      "description": "Batman traque le Riddler qui terrorise Gotham City."
+    },
+    {
+      "id": 10,
+      "titre": "Chainsaw Man",
+      "type": "anime",
+      "saison": 1,
+      "episode": 12,
+      "cover": "https://image.tmdb.org/t/p/w500/npdB6tgm6iG7eH5m1q4C1Lp5aFN.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+      "description": "Denji, le chasseur de démons à la tronçonneuse, affronte ses pires ennemis."
+    },
+    {
+      "id": 11,
+      "titre": "Interstellar",
+      "type": "film",
+      "cover": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+      "description": "Un voyage spatial épique à travers un trou de ver pour sauver l'humanité."
+    },
+    {
+      "id": 12,
+      "titre": "Money Heist",
+      "type": "serie",
+      "saison": 5,
+      "episode": 10,
+      "cover": "https://image.tmdb.org/t/p/w500/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+      "description": "Le Professeur et sa bande orchestrent le braquage le plus audacieux d'Espagne."
+    }
+  ]
+}
